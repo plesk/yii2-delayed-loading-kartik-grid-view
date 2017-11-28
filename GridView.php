@@ -53,10 +53,15 @@ class GridView extends KartikGridView
             $this->dataProvider->setModels([]);
             $this->dataProvider->setTotalCount(0);
 
+            // prevent the page reload in case error is occurred
             $this->view->registerJs(
-                '$("document").ready(function(){
-                    $.pjax.reload({container:"#' . $this->pjaxSettings['options']['id'] . '"});
+                '$(document).on(\'pjax:error\', function(event, xhr, textStatus, error, options) {
+                    return false;
                 });'
+            );
+
+            $this->view->registerJs(
+                '$.pjax.reload({container:"#' . $this->pjaxSettings['options']['id'] . '"});'
             );
         }
     }

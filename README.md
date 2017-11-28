@@ -38,8 +38,23 @@ if (Yii::$app->request->isAjax) {
 }
 ```
 
+To handle pjax errors you should setup your handler before calling this widget.
+```html
+<head>
+    <?php
+        $this->registerJs(
+            '$(document).on(\'pjax:error\', function(event, xhr, textStatus, error, options) {
+                pleskMessageBox.options.title = error;
+                pleskMessageBox.alert(xhr.responseText);
+            });'
+        );
+    ?>
+</head>
+
+```
+
 Exceptions
 
-- plesk\delayedloadingkartikgridview\exceptions\Exception
+    - plesk\delayedloadingkartikgridview\exceptions\Exception
 
-    All exceptions thrown by the extension, extend this exception.
+        All exceptions thrown by the extension, extend this exception.
