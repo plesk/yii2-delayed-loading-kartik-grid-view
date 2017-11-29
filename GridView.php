@@ -4,8 +4,9 @@
 namespace plesk\delayedloadingkartikgridview;
 
 use Yii;
-use kartik\grid\GridView as KartikGridView;
 use yii\data\BaseDataProvider;
+use yii\helpers\Json;
+use kartik\grid\GridView as KartikGridView;
 use plesk\delayedloadingkartikgridview\exceptions\Exception;
 
 
@@ -60,8 +61,11 @@ class GridView extends KartikGridView
                 });'
             );
 
+            $options = Json::htmlEncode(
+                Yii::$app->pjax->pjaxConvertConfigWidgetToJs($this->pjaxSettings['options'])
+            );
             $this->view->registerJs(
-                '$.pjax.reload({container:"#' . $this->pjaxSettings['options']['id'] . '"});'
+                '$.pjax.reload(' . $options . ');'
             );
         }
     }
