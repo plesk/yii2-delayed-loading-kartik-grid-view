@@ -60,13 +60,18 @@ class GridView extends KartikGridView
                     return false;
                 });'
             );
-
-            $options = Json::htmlEncode(
-                Yii::$app->pjax->pjaxConvertConfigWidgetToJs($this->pjaxSettings['options'])
-            );
-            $this->view->registerJs(
-                '$.pjax.reload(' . $options . ');'
-            );
         }
+    }
+
+    public function run()
+    {
+        parent::run();
+
+        $options = Json::htmlEncode(
+            Yii::$app->pjax->pjaxConvertConfigWidgetToJs($this->pjaxSettings['options'])
+        );
+        $this->view->registerJs(
+            '$.pjax.reload(' . $options . ');'
+        );
     }
 }
