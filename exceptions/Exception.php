@@ -1,5 +1,5 @@
 <?php
-// Copyright 1999-2016. Parallels IP Holdings GmbH. All Rights Reserved.
+// Copyright 2017 Plesk International GmbH
 
 namespace plesk\delayedloadingkartikgridview\exceptions;
 

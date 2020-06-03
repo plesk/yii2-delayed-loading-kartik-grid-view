@@ -1,5 +1,5 @@
 <?php
-// Copyright 1999-2017. Plesk International GmbH. All rights reserved.
+// Copyright 2017 Plesk International GmbH
 
 namespace plesk\delayedloadingkartikgridview;
 

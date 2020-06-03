@@ -1,10 +1,10 @@
 {
     "name": "plesk/yii2-delayed-loading-kartik-grid-view",
     "description": "Plesk extension for Yii2 framework to load kartik GridView via pjax during opening the page.",
-    "homepage": "http://www.plesk.com",
+    "homepage": "https://github.com/plesk/yii2-delayed-loading-kartik-grid-view",
     "type": "yii2-extension",
     "keywords": ["yii2","extension","plesk","widget","grid","kartik"],
-    "license": "proprietary",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "Dmitrii Shiriaev",

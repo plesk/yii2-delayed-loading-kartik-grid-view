@@ -12,12 +12,25 @@ The preferred way to install this extension is through [composer](http://getcomp
     "repositories": [
         {
             "type": "vcs",
-            "url":  "ssh://git@git.plesk.ru:7999/id/yii2-delayed-loading-kartik-grid-view.git"
+            "url":  "git@github.com:plesk/yii2-delayed-loading-kartik-grid-view.git"
         }
     ]
     ```
 
 - Run `composer require "plesk/yii2-delayed-loading-kartik-grid-view:^1.0.0"`
+
+Configuration
+------------
+
+```php
+[
+    'components' => [
+        'pjax' => [
+            'class' => 'plesk\yii2pjax\Component',
+        ],
+    ],
+]
+```
 
 API
 ------------
