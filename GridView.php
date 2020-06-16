@@ -71,7 +71,8 @@ class GridView extends KartikGridView
             Yii::$app->pjax->pjaxConvertConfigWidgetToJs($this->pjaxSettings['options'])
         );
         $this->view->registerJs(
-            '$.pjax.reload(' . $options . ');'
+            '$.pjax.reload(' . $options . ');
+            $.pjax.xhr = null;' // allow multiple pjax requests simultaneously
         );
     }
 }
